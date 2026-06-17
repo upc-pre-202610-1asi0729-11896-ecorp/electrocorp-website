@@ -5,22 +5,24 @@
     overflow: hidden;
 
     min-height: calc(100vh - 76px);
-    padding: 108px 24px 88px;
+    padding: 36px 7% 88px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
 
     text-align: center;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 36px 7% auto;
-    height: 62%;
-    max-height: 520px;
+.hero-panel {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    min-height: min(520px, calc(100vh - 220px));
+    padding: 64px 24px;
 
     border-radius: 34px;
     border: 1px solid var(--border-color);
@@ -28,7 +30,11 @@
         radial-gradient(circle at top left, rgba(66, 194, 255, 0.22), transparent 36%),
         linear-gradient(135deg, rgba(20, 35, 58, 0.72), rgba(8, 24, 45, 0.62));
     box-shadow: var(--shadow-card);
-    z-index: -2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero .background-image {
@@ -61,7 +67,7 @@
 
 .hero h3 {
     max-width: 780px;
-    margin: 0 auto 34px;
+    margin: 0 auto;
     color: var(--text-muted);
     font-size: 1.12rem;
     font-weight: 700;
