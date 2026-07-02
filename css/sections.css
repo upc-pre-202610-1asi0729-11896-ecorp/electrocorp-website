@@ -951,3 +951,11 @@ footer::before {
 .audio-toggle i {
     font-size: 1rem;
 }
+
+.footer-terms-link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+.footer-terms-link:hover { opacity: 1; }

@@ -156,7 +156,33 @@ const translations = {
 
         footer_tagline: "Energía clara. Decisiones inteligentes.",
         footer_rights: "Todos los derechos reservados.",
-        audio_toggle: "Activar o desactivar música"
+        footer_terms: "Términos y Condiciones",
+        audio_toggle: "Activar o desactivar música",
+        terms_back: "Volver al inicio",
+        terms_title: "Términos y Condiciones del Servicio",
+        terms_updated: "Última actualización: junio de 2026",
+        terms_s1_title: "Aceptación de los Términos",
+        terms_s1_body: "Al acceder o utilizar la plataforma ElectroCorp.Web y sus servicios asociados, aceptas quedar vinculado por estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de estos términos, debes dejar de utilizar el servicio de inmediato.",
+        terms_s2_title: "Descripción del Servicio",
+        terms_s2_body: "ElectroCorp.Web ofrece una plataforma de software para el monitoreo en tiempo real, control y automatización del consumo eléctrico residencial y comercial mediante dispositivos IoT. El servicio incluye un panel web, acceso desde una aplicación móvil, alertas de consumo y recomendaciones de ahorro energético.",
+        terms_s3_title: "Cuentas de Usuario y Responsabilidades",
+        terms_s3_body: "Los usuarios son responsables de mantener la confidencialidad de sus credenciales y de todas las actividades que ocurran bajo su cuenta. Aceptas proporcionar información precisa, actual y completa durante el registro. ElectroCorp.Web se reserva el derecho de suspender o cancelar cuentas que violen estos términos.",
+        terms_s4_title: "Uso Aceptable",
+        terms_s4_body: "Aceptas no utilizar la plataforma con fines ilegales, no interferir con el servicio, no intentar accesos no autorizados, no transmitir contenido dañino o malicioso, ni reproducir, duplicar o revender ninguna parte del servicio sin permiso escrito expreso de ElectroCorp.Web.",
+        terms_s5_title: "Pagos y Suscripciones",
+        terms_s5_body: "Los planes de pago se facturan mensualmente. Los precios se muestran en Soles Peruanos (S/) y pueden estar sujetos a impuestos aplicables. Las cuotas de suscripción no son reembolsables, salvo cuando lo exija la ley. La cancelación surte efecto al final del período de facturación vigente.",
+        terms_s6_title: "Privacidad y Datos",
+        terms_s6_body: "Recopilamos y procesamos los datos necesarios para operar el servicio, incluyendo lecturas de consumo eléctrico, identificadores de dispositivos e información de cuenta. No vendemos datos personales a terceros. Los datos se almacenan de forma segura y se procesan de conformidad con la legislación peruana de protección de datos aplicable (Ley N.° 29733).",
+        terms_s7_title: "Propiedad Intelectual",
+        terms_s7_body: "Todo el contenido, marcas, software y diseños de esta plataforma son propiedad de ElectroCorp.Web y están protegidos por las leyes de propiedad intelectual aplicables. A los usuarios se les otorga una licencia limitada y no exclusiva para utilizar el servicio con fines personales o empresariales internos únicamente.",
+        terms_s8_title: "Limitación de Responsabilidad",
+        terms_s8_body: "ElectroCorp.Web se proporciona 'tal cual'. En la máxima medida permitida por la ley, renunciamos a todas las garantías y no seremos responsables de daños indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de uso del servicio, incluidas la pérdida de datos o las interrupciones del servicio.",
+        terms_s9_title: "Compromiso Ético",
+        terms_s9_body: "ElectroCorp.Web es desarrollado por estudiantes de Ingeniería de Software de la UPC y se adhiere a los principios éticos del Código de Ética ACM/IEEE para Ingeniería de Software y al Código de Ética Profesional del CIP (Colegio de Ingenieros del Perú). Estamos comprometidos con la transparencia, la seguridad del usuario, la privacidad y el uso responsable de la tecnología para el bien común.",
+        terms_s10_title: "Cambios en estos Términos",
+        terms_s10_body: "Nos reservamos el derecho de modificar estos términos en cualquier momento. Notificaremos a los usuarios registrados sobre cambios sustanciales por correo electrónico. El uso continuado de la plataforma tras la publicación de los cambios implica la aceptación de los términos revisados.",
+        terms_s11_title: "Contacto",
+        terms_s11_body: "Para preguntas o consultas sobre estos Términos y Condiciones, contáctanos en:"
     },
 
     en: {
@@ -315,7 +341,33 @@ const translations = {
 
         footer_tagline: "Clear energy. Smarter decisions.",
         footer_rights: "All rights reserved.",
-        audio_toggle: "Turn music on or off"
+        footer_terms: "Terms and Conditions",
+        audio_toggle: "Turn music on or off",
+        terms_back: "Back to home",
+        terms_title: "Terms and Conditions of Service",
+        terms_updated: "Last updated: June 2026",
+        terms_s1_title: "Acceptance of Terms",
+        terms_s1_body: "By accessing or using the ElectroCorp.Web platform and its associated services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must discontinue use of our service immediately.",
+        terms_s2_title: "Description of Service",
+        terms_s2_body: "ElectroCorp.Web provides a software platform for real-time monitoring, control and automation of residential and commercial electrical consumption through IoT devices. The service includes a web dashboard, mobile application access, consumption alerts and energy-saving recommendations.",
+        terms_s3_title: "User Accounts and Responsibilities",
+        terms_s3_body: "Users are responsible for maintaining the confidentiality of their credentials and for all activities that occur under their account. You agree to provide accurate, current and complete information during registration. ElectroCorp.Web reserves the right to suspend or terminate accounts that violate these terms.",
+        terms_s4_title: "Acceptable Use",
+        terms_s4_body: "You agree not to use the platform for any unlawful purpose, to interfere with the service, to attempt unauthorised access, to transmit harmful or malicious content, or to reproduce, duplicate or resell any part of the service without express written permission from ElectroCorp.Web.",
+        terms_s5_title: "Payment and Subscriptions",
+        terms_s5_body: "Paid plans are billed on a monthly basis. Prices are shown in Peruvian Soles (S/) and may be subject to applicable taxes. Subscription fees are non-refundable except where required by law. Cancellation takes effect at the end of the current billing period.",
+        terms_s6_title: "Privacy and Data",
+        terms_s6_body: "We collect and process data necessary to operate the service, including energy consumption readings, device identifiers and account information. We do not sell personal data to third parties. Data is stored securely and processed in accordance with applicable Peruvian data protection law (Ley N.° 29733).",
+        terms_s7_title: "Intellectual Property",
+        terms_s7_body: "All content, branding, software, and designs on this platform are the property of ElectroCorp.Web and are protected by applicable intellectual property laws. Users are granted a limited, non-exclusive licence to use the service for personal or internal business purposes only.",
+        terms_s8_title: "Limitation of Liability",
+        terms_s8_body: "ElectroCorp.Web is provided \"as is\". To the maximum extent permitted by law, we disclaim all warranties and shall not be liable for indirect, incidental or consequential damages arising from the use or inability to use the service, including data loss or service interruptions.",
+        terms_s9_title: "Ethical Commitment",
+        terms_s9_body: "ElectroCorp.Web is developed by Software Engineering students at UPC and adheres to the ethical principles of the ACM/IEEE Code of Ethics for Software Engineering and the Professional Code of Ethics of the CIP (Colegio de Ingenieros del Perú). We are committed to transparency, user safety, privacy and the responsible use of technology for the common good.",
+        terms_s10_title: "Changes to These Terms",
+        terms_s10_body: "We reserve the right to modify these terms at any time. We will notify registered users of material changes via email. Continued use of the platform after changes are posted constitutes acceptance of the revised terms.",
+        terms_s11_title: "Contact",
+        terms_s11_body: "For questions or concerns regarding these Terms and Conditions, please contact us at:"
     },
 
     pt: {
@@ -474,7 +526,33 @@ const translations = {
 
         footer_tagline: "Energia clara. Decisões inteligentes.",
         footer_rights: "Todos os direitos reservados.",
-        audio_toggle: "Ativar ou desativar música"
+        footer_terms: "Termos e Condições",
+        audio_toggle: "Ativar ou desativar música",
+        terms_back: "Voltar ao início",
+        terms_title: "Termos e Condições do Serviço",
+        terms_updated: "Última atualização: junho de 2026",
+        terms_s1_title: "Aceitação dos Termos",
+        terms_s1_body: "Ao acessar ou utilizar a plataforma ElectroCorp.Web e seus serviços associados, você concorda em ficar vinculado a estes Termos e Condições. Se você não concordar com qualquer parte destes termos, deverá descontinuar o uso do nosso serviço imediatamente.",
+        terms_s2_title: "Descrição do Serviço",
+        terms_s2_body: "ElectroCorp.Web fornece uma plataforma de software para monitoramento em tempo real, controle e automação do consumo elétrico residencial e comercial por meio de dispositivos IoT. O serviço inclui um painel web, acesso por aplicativo móvel, alertas de consumo e recomendações de economia de energia.",
+        terms_s3_title: "Contas de Usuário e Responsabilidades",
+        terms_s3_body: "Os usuários são responsáveis por manter a confidencialidade de suas credenciais e por todas as atividades que ocorram em sua conta. Você concorda em fornecer informações precisas, atuais e completas durante o cadastro. ElectroCorp.Web reserva-se o direito de suspender ou encerrar contas que violem estes termos.",
+        terms_s4_title: "Uso Aceitável",
+        terms_s4_body: "Você concorda em não usar a plataforma para fins ilegais, não interferir no serviço, não tentar acesso não autorizado, não transmitir conteúdo prejudicial ou malicioso, nem reproduzir, duplicar ou revender qualquer parte do serviço sem permissão expressa por escrito da ElectroCorp.Web.",
+        terms_s5_title: "Pagamentos e Assinaturas",
+        terms_s5_body: "Os planos pagos são cobrados mensalmente. Os preços são exibidos em Soles Peruanos (S/) e podem estar sujeitos a impostos aplicáveis. As mensalidades não são reembolsáveis, exceto quando exigido por lei. O cancelamento entra em vigor no final do período de cobrança atual.",
+        terms_s6_title: "Privacidade e Dados",
+        terms_s6_body: "Coletamos e processamos dados necessários para operar o serviço, incluindo leituras de consumo de energia, identificadores de dispositivos e informações de conta. Não vendemos dados pessoais a terceiros. Os dados são armazenados com segurança e processados de acordo com a legislação peruana de proteção de dados aplicável (Lei N.° 29733).",
+        terms_s7_title: "Propriedade Intelectual",
+        terms_s7_body: "Todo o conteúdo, marcas, software e designs desta plataforma são de propriedade da ElectroCorp.Web e estão protegidos pelas leis de propriedade intelectual aplicáveis. Os usuários recebem uma licença limitada e não exclusiva para usar o serviço apenas para fins pessoais ou empresariais internos.",
+        terms_s8_title: "Limitação de Responsabilidade",
+        terms_s8_body: "ElectroCorp.Web é fornecida 'como está'. Na máxima extensão permitida por lei, isentamos todas as garantias e não nos responsabilizamos por danos indiretos, incidentais ou consequenciais decorrentes do uso ou da impossibilidade de uso do serviço, incluindo perda de dados ou interrupções do serviço.",
+        terms_s9_title: "Compromisso Ético",
+        terms_s9_body: "ElectroCorp.Web é desenvolvida por estudantes de Engenharia de Software da UPC e adere aos princípios éticos do Código de Ética ACM/IEEE para Engenharia de Software e ao Código de Ética Profissional do CIP (Colegio de Ingenieros del Perú). Estamos comprometidos com a transparência, a segurança do usuário, a privacidade e o uso responsável da tecnologia para o bem comum.",
+        terms_s10_title: "Alterações nestes Termos",
+        terms_s10_body: "Reservamo-nos o direito de modificar estes termos a qualquer momento. Notificaremos os usuários cadastrados sobre alterações relevantes por e-mail. O uso continuado da plataforma após a publicação das alterações constitui aceitação dos termos revisados.",
+        terms_s11_title: "Contato",
+        terms_s11_body: "Para dúvidas ou questões sobre estes Termos e Condições, entre em contato conosco em:"
     }
 };
 
@@ -534,8 +612,12 @@ function setLanguage(lang) {
     document.dispatchEvent(new CustomEvent("languagechange", {
         detail: { language: currentLanguage }
     }));
+
+    try { localStorage.setItem("ecorp_lang", lang); } catch (_) {}
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    setLanguage(currentLanguage);
+    let saved;
+    try { saved = localStorage.getItem("ecorp_lang"); } catch (_) {}
+    setLanguage(saved && translations[saved] ? saved : currentLanguage);
 });
