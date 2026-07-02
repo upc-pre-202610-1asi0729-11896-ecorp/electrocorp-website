@@ -478,7 +478,7 @@ const translations = {
     }
 };
 
-let currentLanguage = "es";
+let currentLanguage = "en";
 
 function applyTranslations(lang) {
     document.querySelectorAll("[data-i18n]").forEach((element) => {
