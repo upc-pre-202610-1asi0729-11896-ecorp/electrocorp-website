@@ -315,6 +315,14 @@ footer p a {
     color: var(--main-blue);
 }
 
+.footer-terms-link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+.footer-terms-link:hover { opacity: 1; }
+
 /* ============================= */
 /* CHECKOUT MODAL FIX */
 /* ============================= */
