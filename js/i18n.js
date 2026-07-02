@@ -380,14 +380,10 @@ checkout_continue: "Continuar para o cadastro"
 let currentLanguage = "en";
 
 function applyTranslations(lang) {
-    const elements = document.querySelectorAll("[data-i18n]");
-
-    elements.forEach((element) => {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
         const key = element.getAttribute("data-i18n");
-
         if (translations[lang] && translations[lang][key]) {
             const value = translations[lang][key];
-
             if (value.includes("<")) {
                 element.innerHTML = value;
             } else {
@@ -396,34 +392,37 @@ function applyTranslations(lang) {
         }
     });
 
-    const ariaElements = document.querySelectorAll("[data-i18n-aria]");
-
-    ariaElements.forEach((element) => {
+    document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
         const key = element.getAttribute("data-i18n-aria");
-
         if (translations[lang] && translations[lang][key]) {
             element.setAttribute("aria-label", translations[lang][key]);
         }
     });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (translations[lang] && translations[lang][key]) {
+            element.setAttribute("placeholder", translations[lang][key]);
+        }
+    });
+
+    document.documentElement.lang = lang;
 }
 
 function setLanguage(lang) {
+    if (!translations[lang]) return;
     currentLanguage = lang;
     applyTranslations(currentLanguage);
 
-    // Quitamos la clase 'active' de todos los botones
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    // Le agregamos la clase 'active' solo al botón seleccionado
+    document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
     const activeBtn = document.getElementById(`btn-lang-${lang}`);
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
+    if (activeBtn) activeBtn.classList.add("active");
+
+    try { localStorage.setItem("ecorp_lang", lang); } catch (_) {}
 }
 
-// Cargar inglés (o el currentLanguage) por defecto al iniciar la página
 document.addEventListener("DOMContentLoaded", () => {
-    setLanguage(currentLanguage);
+    let saved;
+    try { saved = localStorage.getItem("ecorp_lang"); } catch (_) {}
+    setLanguage(saved && translations[saved] ? saved : currentLanguage);
 });
