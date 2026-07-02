@@ -1,25 +1,24 @@
-/* Formulario de suscripción (lead) */
+/* Formulario de suscripción (demostración de interfaz) */
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form-suscripcion");
-    if (!form) return;
+    const message = document.getElementById("mensaje-suscripcion");
+    if (!form || !message) return;
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-        const email = document.getElementById("email-boletin").value;
-        const mensaje = document.getElementById("mensaje-suscripcion");
-        if (!mensaje) return;
+        const emailInput = document.getElementById("email-boletin");
+        if (!emailInput) return;
 
-        console.log("Nuevo lead capturado:", email);
-
-        mensaje.innerText =
-            "¡Gracias por unirte a la revolución energética! Te hemos enviado un correo de confirmación.";
-        mensaje.style.display = "block";
-
+        console.log("Nuevo lead capturado:", emailInput.value);
+        message.textContent = typeof getTranslation === "function"
+            ? getTranslation("subscription_success", "¡Gracias por unirte!")
+            : "¡Gracias por unirte!";
+        message.style.display = "block";
         form.reset();
 
-        setTimeout(() => {
-            mensaje.style.display = "none";
-        }, 4000);
+        window.setTimeout(() => {
+            message.style.display = "none";
+        }, 4500);
     });
 });
