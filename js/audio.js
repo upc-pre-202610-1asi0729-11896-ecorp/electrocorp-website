@@ -1,24 +1,35 @@
 /* Música de fondo: botón flotante */
 document.addEventListener("DOMContentLoaded", () => {
-    const musica = document.getElementById("musica-fondo");
-    const btnAudio = document.getElementById("btn-audio");
-    const iconoAudio = document.getElementById("icono-audio");
+    const music = document.getElementById("musica-fondo");
+    const audioButton = document.getElementById("btn-audio");
+    const audioIcon = document.getElementById("icono-audio");
+    if (!music || !audioButton || !audioIcon) return;
 
-    if (!musica || !btnAudio || !iconoAudio) return;
+    music.volume = 0.3;
+    let isPlaying = false;
 
-    musica.volume = 0.3;
-    let estaReproduciendo = false;
+    const renderState = () => {
+        audioIcon.classList.toggle("fa-volume-up", isPlaying);
+        audioIcon.classList.toggle("fa-volume-off", !isPlaying);
+        audioButton.setAttribute("aria-pressed", String(isPlaying));
+    };
 
-    btnAudio.addEventListener("click", () => {
-        if (estaReproduciendo) {
-            musica.pause();
-            iconoAudio.classList.remove("fa-volume-up");
-            iconoAudio.classList.add("fa-volume-off");
-        } else {
-            musica.play();
-            iconoAudio.classList.remove("fa-volume-off");
-            iconoAudio.classList.add("fa-volume-up");
+    audioButton.addEventListener("click", async () => {
+        if (isPlaying) {
+            music.pause();
+            isPlaying = false;
+            renderState();
+            return;
         }
-        estaReproduciendo = !estaReproduciendo;
+
+        try {
+            await music.play();
+            isPlaying = true;
+        } catch (_error) {
+            isPlaying = false;
+        }
+        renderState();
     });
+
+    renderState();
 });

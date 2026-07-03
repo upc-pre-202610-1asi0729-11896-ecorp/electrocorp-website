@@ -1,3 +1,4 @@
+/* Punto de entrada: importar módulos en orden */
 @import url("base.css");
 @import url("header.css");
 @import url("hero.css");
