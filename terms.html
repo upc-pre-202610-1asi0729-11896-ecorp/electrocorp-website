@@ -110,29 +110,14 @@
 
 <script src="js/i18n.js"></script>
 <script>
-    /* Sync <title> with i18n on language change */
-    document.addEventListener("DOMContentLoaded", () => {
-        function updateTitle() {
-            const t = {
-                en: "ElectroCorp | Terms and Conditions",
-                es: "ElectroCorp | Términos y Condiciones",
-                pt: "ElectroCorp | Termos e Condições"
-            };
-            document.title = t[currentLanguage] || t.en;
-        }
-        updateTitle();
-        document.addEventListener("languagechange", updateTitle);
+    const titleMap = {
+        en: "ElectroCorp | Terms and Conditions",
+        es: "ElectroCorp | Términos y Condiciones",
+        pt: "ElectroCorp | Termos e Condições"
+    };
+    document.addEventListener("languagechange", (e) => {
+        document.title = titleMap[e.detail.language] || titleMap.en;
     });
-
-    function dispatchLangChange() {
-        document.dispatchEvent(new CustomEvent("languagechange"));
-    }
-
-    const _origSet = setLanguage;
-    function setLanguage(lang) {
-        _origSet(lang);
-        dispatchLangChange();
-    }
 </script>
 </body>
 </html>
