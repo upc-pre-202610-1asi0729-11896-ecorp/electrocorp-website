@@ -377,8 +377,23 @@ function applyTranslations(lang) {
     });
 }
 
-function setLanguage(lang) {
+async function loadRemoteTranslations(lang) {
+    try {
+        const bundle = await window.ElectroCorpApi?.get(`/translations?lang=${encodeURIComponent(lang)}`);
+        if (bundle?.messages) {
+            translations[lang] = {
+                ...(translations[lang] || {}),
+                ...bundle.messages
+            };
+        }
+    } catch (error) {
+        console.warn("Translations API unavailable, using local bundle.", error);
+    }
+}
+
+async function setLanguage(lang) {
     currentLanguage = lang;
+    await loadRemoteTranslations(currentLanguage);
     applyTranslations(currentLanguage);
 
     // Quitamos la clase 'active' de todos los botones
