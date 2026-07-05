@@ -52,10 +52,12 @@
 
     <section id="hero" class="hero">
         <div class="background-image" style="background-image: url('img/FondoPantalla2.png');"></div>
-        <h1 data-i18n="hero_title"> Take control of your home's electricity consumption </h1>
-        <h1 data-i18n="hero_title2"> Save up to 20% on energy in your home </h1>
-        <a href="https://electrocorp-webapp.onrender.com/energy-monitoring/dashboard" class="btn hero-dashboard-btn" data-i18n="hero_dashboard">Go to ElectroCorp Web App</a>
-        <h3 data-i18n="hero_subtitle"> 15% discount for 3 months for the first 50 new users </h3>
+        <div class="hero-panel">
+            <h1 data-i18n="hero_title"> Take control of your home's electricity consumption </h1>
+            <h1 data-i18n="hero_title2"> Save up to 20% on energy in your home </h1>
+            <a href="https://electrocorp-webapp.onrender.com/energy-monitoring/dashboard" class="btn hero-dashboard-btn" data-i18n="hero_dashboard">Go to ElectroCorp Web App</a>
+            <h3 data-i18n="hero_subtitle"> 15% discount for 3 months for the first 50 new users </h3>
+        </div>
 
         <div class="search-container">
             <input type="text" placeholder="Search keyword or question" id="searchInput">
@@ -190,85 +192,6 @@
             >
                 Choose plan
             </button>
-        </article>
-    </div>
-
-    <div class="checkout-modal" id="checkout-modal" aria-hidden="true">
-        <div class="checkout-backdrop" data-close-checkout></div>
-
-        <article class="checkout-card">
-            <button type="button" class="checkout-close" data-close-checkout>
-                ×
-            </button>
-
-            <span class="section-kicker" data-i18n="checkout_kicker">SIMULATED CHECKOUT</span>
-
-            <h3 data-i18n="checkout_title">Complete your plan activation</h3>
-
-            <p class="checkout-summary">
-                <span data-i18n="checkout_selected_plan">Selected plan</span>:
-                <strong id="checkout-plan-name">Professional Plan</strong>
-                · S/ <strong id="checkout-plan-price">49.00</strong>
-            </p>
-
-            <form id="landing-checkout-form" class="checkout-form">
-                <label>
-                    <span data-i18n="checkout_holder">Card holder</span>
-                    <input
-                        type="text"
-                        id="checkout-holder"
-                        placeholder="Jean Loa"
-                        required
-                    >
-                </label>
-
-                <label>
-                    <span data-i18n="checkout_card_number">Card number</span>
-                    <input
-                        type="text"
-                        id="checkout-card"
-                        inputmode="numeric"
-                        maxlength="19"
-                        placeholder="4242 4242 4242 4242"
-                        required
-                    >
-                </label>
-
-                <div class="checkout-row">
-                    <label>
-                        <span data-i18n="checkout_expiration">Expiration</span>
-                        <input
-                            type="text"
-                            id="checkout-expiration"
-                            inputmode="numeric"
-                            maxlength="5"
-                            placeholder="01/26"
-                            required
-                        >
-                    </label>
-
-                    <label>
-                        <span data-i18n="checkout_cvv">CVV</span>
-                        <input
-                            type="password"
-                            id="checkout-cvv"
-                            inputmode="numeric"
-                            maxlength="3"
-                            pattern="[0-9]{3}"
-                            placeholder="123"
-                            required
-                        >
-                    </label>
-                </div>
-
-                <p class="checkout-note" data-i18n="checkout_note">
-                    Academic simulated payment. The full card number and CVV are not sent to the WebApp.
-                </p>
-
-                <button type="submit" class="btn checkout-submit" data-i18n="checkout_continue">
-                    Continue to register
-                </button>
-            </form>
         </article>
     </div>
 
@@ -498,7 +421,9 @@
     <source src="audio/ElectroCorp.mp3" type="audio/mp3">
 </audio>
 
+<script src="js/api.js"></script>
 <script src="js/i18n.js"></script>
+<script src="js/landing-content.js"></script>
 <script src="js/search.js"></script>
 <script src="js/newsletter.js"></script>
 <script src="js/testimonials.js"></script>
