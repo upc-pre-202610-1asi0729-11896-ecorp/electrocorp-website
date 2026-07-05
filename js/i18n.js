@@ -113,17 +113,7 @@ enterprise_plan_li3: "Alertas avanzadas",
 enterprise_plan_li4: "Soporte prioritario",
 
 plan_recommended: "Recomendado",
-btn_choose_plan: "Elegir plan",
-
-checkout_kicker: "Pago simulado",
-checkout_title: "Completa la activación de tu plan",
-checkout_selected_plan: "Plan seleccionado",
-checkout_holder: "Titular de la tarjeta",
-checkout_card_number: "Número de tarjeta",
-checkout_expiration: "Vencimiento",
-checkout_cvv: "CVV",
-checkout_note: "Pago simulado académico. El número completo de tarjeta y el CVV no se envían a la WebApp.",
-checkout_continue: "Continuar al registro"
+btn_choose_plan: "Elegir plan"
     },
     en: {
         nav_home: "Home",
@@ -238,17 +228,7 @@ enterprise_plan_li3: "Advanced alerts",
 enterprise_plan_li4: "Priority support",
 
 plan_recommended: "Recommended",
-btn_choose_plan: "Choose plan",
-
-checkout_kicker: "Simulated checkout",
-checkout_title: "Complete your plan activation",
-checkout_selected_plan: "Selected plan",
-checkout_holder: "Card holder",
-checkout_card_number: "Card number",
-checkout_expiration: "Expiration",
-checkout_cvv: "CVV",
-checkout_note: "Academic simulated payment. The full card number and CVV are not sent to the WebApp.",
-checkout_continue: "Continue to register"
+btn_choose_plan: "Choose plan"
     },
     pt: {
         nav_home: "Início",
@@ -363,17 +343,7 @@ enterprise_plan_li3: "Alertas avançados",
 enterprise_plan_li4: "Suporte prioritário",
 
 plan_recommended: "Recomendado",
-btn_choose_plan: "Escolher plano",
-
-checkout_kicker: "Pagamento simulado",
-checkout_title: "Complete a ativação do seu plano",
-checkout_selected_plan: "Plano selecionado",
-checkout_holder: "Titular do cartão",
-checkout_card_number: "Número do cartão",
-checkout_expiration: "Validade",
-checkout_cvv: "CVV",
-checkout_note: "Pagamento acadêmico simulado. O número completo do cartão e o CVV não são enviados para a WebApp.",
-checkout_continue: "Continuar para o cadastro"
+btn_choose_plan: "Escolher plano"
     }
 };
 
@@ -407,8 +377,23 @@ function applyTranslations(lang) {
     });
 }
 
-function setLanguage(lang) {
+async function loadRemoteTranslations(lang) {
+    try {
+        const bundle = await window.ElectroCorpApi?.get(`/translations?lang=${encodeURIComponent(lang)}`);
+        if (bundle?.messages) {
+            translations[lang] = {
+                ...(translations[lang] || {}),
+                ...bundle.messages
+            };
+        }
+    } catch (error) {
+        console.warn("Translations API unavailable, using local bundle.", error);
+    }
+}
+
+async function setLanguage(lang) {
     currentLanguage = lang;
+    await loadRemoteTranslations(currentLanguage);
     applyTranslations(currentLanguage);
 
     // Quitamos la clase 'active' de todos los botones

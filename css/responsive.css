@@ -158,13 +158,8 @@
         width: 100%;
     }
 
-    .service-card,
-    .checkout-card {
+    .service-card {
         padding: 22px;
-    }
-
-    .checkout-row {
-        grid-template-columns: 1fr;
     }
 
     .recommended-badge {
