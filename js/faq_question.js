@@ -1,73 +1,36 @@
-﻿document.addEventListener("DOMContentLoaded", function() {
-    const faqQ1 = document.querySelectorAll(".faq_q1");
+﻿/* Acordeón accesible para preguntas frecuentes */
+document.addEventListener("DOMContentLoaded", () => {
+    const questions = Array.from(document.querySelectorAll(".faq-question"));
+    if (!questions.length) return;
 
-    faqQ1.forEach(question => {
-        question.addEventListener("click", function() {
-            // Alternar la clase 'active' en el botón
-            this.classList.toggle("active");
+    const closeQuestion = (question) => {
+        const answer = question.nextElementSibling;
+        question.classList.remove("active");
+        question.setAttribute("aria-expanded", "false");
+        if (answer) answer.style.maxHeight = "0px";
+    };
 
-            // Controlar el panel de respuesta
-            const answer = this.nextElementSibling;
-            if (this.classList.contains("active")) {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            } else {
-                answer.style.maxHeight = 0;
-            }
+    const openQuestion = (question) => {
+        const answer = question.nextElementSibling;
+        question.classList.add("active");
+        question.setAttribute("aria-expanded", "true");
+        if (answer) answer.style.maxHeight = `${answer.scrollHeight}px`;
+    };
 
-            // Opcional: Cerrar las otras preguntas cuando se abre una
-            faqQ1.forEach(otherQuestion => {
-                if (otherQuestion !== this && otherQuestion.classList.contains("active")) {
-                    otherQuestion.classList.remove("active");
-                    otherQuestion.nextElementSibling.style.maxHeight = 0;
-                }
-            });
+    questions.forEach((question) => {
+        question.addEventListener("click", () => {
+            const shouldOpen = !question.classList.contains("active");
+            questions.forEach(closeQuestion);
+            if (shouldOpen) openQuestion(question);
         });
     });
-    const faqQ2 = document.querySelectorAll(".faq_q2");
 
-    faqQ2.forEach(question => {
-        question.addEventListener("click", function() {
-            // Alternar la clase 'active' en el botón
-            this.classList.toggle("active");
-
-            // Controlar el panel de respuesta
-            const answer = this.nextElementSibling;
-            if (this.classList.contains("active")) {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            } else {
-                answer.style.maxHeight = 0;
-            }
-
-            // Opcional: Cerrar las otras preguntas cuando se abre una
-            faqQ2.forEach(otherQuestion => {
-                if (otherQuestion !== this && otherQuestion.classList.contains("active")) {
-                    otherQuestion.classList.remove("active");
-                    otherQuestion.nextElementSibling.style.maxHeight = 0;
-                }
-            });
-        });
-    });
-    const faqQ3 = document.querySelectorAll(".faq_q3");
-
-    faqQ3.forEach(question => {
-        question.addEventListener("click", function() {
-            // Alternar la clase 'active' en el botón
-            this.classList.toggle("active");
-
-            // Controlar el panel de respuesta
-            const answer = this.nextElementSibling;
-            if (this.classList.contains("active")) {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            } else {
-                answer.style.maxHeight = 0;
-            }
-
-            // Opcional: Cerrar las otras preguntas cuando se abre una
-            faqQ3.forEach(otherQuestion => {
-                if (otherQuestion !== this && otherQuestion.classList.contains("active")) {
-                    otherQuestion.classList.remove("active");
-                    otherQuestion.nextElementSibling.style.maxHeight = 0;
-                }
+    document.addEventListener("languagechange", () => {
+        requestAnimationFrame(() => {
+            questions.forEach((question) => {
+                if (!question.classList.contains("active")) return;
+                const answer = question.nextElementSibling;
+                if (answer) answer.style.maxHeight = `${answer.scrollHeight}px`;
             });
         });
     });
