@@ -1,49 +1,35 @@
-/* Musica de fondo: boton flotante */
-document.addEventListener("DOMContentLoaded", async () => {
+/* Música de fondo: botón flotante */
+document.addEventListener("DOMContentLoaded", () => {
     const music = document.getElementById("musica-fondo");
     const audioButton = document.getElementById("btn-audio");
     const audioIcon = document.getElementById("icono-audio");
-
     if (!music || !audioButton || !audioIcon) return;
 
     music.volume = 0.3;
     let isPlaying = false;
 
-    try {
-        const config = await window.ElectroCorpApi?.get("/marketing/multimedia-config");
-        if (typeof config?.defaultVolume === "number") {
-            music.volume = Math.max(0, Math.min(1, config.defaultVolume));
-        }
-        if (typeof config?.loopEnabled === "boolean") {
-            music.loop = config.loopEnabled;
-        }
-    } catch (error) {
-        console.warn("Multimedia API unavailable, using local audio defaults.", error);
-    }
-
-    const syncState = async () => {
-        try {
-            await window.ElectroCorpApi?.post("/marketing/multimedia-state", {
-                audioEnabled: isPlaying,
-                menuOpen: false
-            });
-        } catch (error) {
-            console.warn("Could not sync multimedia state.", error);
-        }
+    const renderState = () => {
+        audioIcon.classList.toggle("fa-volume-up", isPlaying);
+        audioIcon.classList.toggle("fa-volume-off", !isPlaying);
+        audioButton.setAttribute("aria-pressed", String(isPlaying));
     };
 
     audioButton.addEventListener("click", async () => {
         if (isPlaying) {
             music.pause();
-            audioIcon.classList.remove("fa-volume-up");
-            audioIcon.classList.add("fa-volume-off");
-        } else {
-            await music.play();
-            audioIcon.classList.remove("fa-volume-off");
-            audioIcon.classList.add("fa-volume-up");
+            isPlaying = false;
+            renderState();
+            return;
         }
 
-        isPlaying = !isPlaying;
-        await syncState();
+        try {
+            await music.play();
+            isPlaying = true;
+        } catch (_error) {
+            isPlaying = false;
+        }
+        renderState();
     });
+
+    renderState();
 });

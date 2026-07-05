@@ -1,4 +1,4 @@
-/* Formulario de suscripción (demostración de interfaz) */
+﻿/* Formulario de suscripción (demostración de interfaz) */
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form-suscripcion");
     const message = document.getElementById("mensaje-suscripcion");
