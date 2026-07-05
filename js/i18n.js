@@ -603,7 +603,6 @@ function setLanguage(lang) {
     if (!translations[lang]) return;
 
     currentLanguage = lang;
-    await loadRemoteTranslations(currentLanguage);
     applyTranslations(currentLanguage);
 
     document.querySelectorAll(".lang-btn").forEach((button) => {

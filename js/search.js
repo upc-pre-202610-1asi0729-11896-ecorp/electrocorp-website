@@ -392,8 +392,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
             }
         }
-        return null;
-    };
 
         return deduplicatedResults;
     }
