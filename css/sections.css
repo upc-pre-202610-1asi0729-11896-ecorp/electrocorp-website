@@ -959,3 +959,46 @@ footer::before {
     transition: opacity 0.2s;
 }
 .footer-terms-link:hover { opacity: 1; }
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-video-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.footer-video-links a {
+    color: #8fb6c9;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-video-links a:hover {
+    color: #00d9ff;
+    text-decoration: underline;
+}
+
+.footer-video-links span {
+    color: #3d596b;
+}
+
+@media (max-width: 768px) {
+    .footer-center {
+        order: 2;
+    }
+
+    .footer-video-links {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .footer-video-links span {
+        display: none;
+    }
+}
